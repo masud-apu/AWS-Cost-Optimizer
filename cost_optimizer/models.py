@@ -19,7 +19,7 @@ class CustomUser(AbstractUser):
     company_name = models.CharField(max_length=200)
     first_name = models.CharField(max_length=200)
     last_name = models.CharField(max_length=200)
-    hear_about_us = models.CharField(max_length=200)
+    hear_about_us = models.CharField(max_length=200, null=True, blank=True)
     monthly_spend = models.CharField(max_length=200, choices=MONTHLY_CLOUD_SPEND_OPTIONS, default='<$10,000')
 
     groups = models.ManyToManyField(Group, blank=True, related_name='custom_users')

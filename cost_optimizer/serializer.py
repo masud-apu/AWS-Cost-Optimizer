@@ -101,3 +101,11 @@ class CustomLoginSerializer(serializers.Serializer):
 class ChangePasswordSerializer(serializers.Serializer):
     old_password = serializers.CharField(required=True)
     new_password = serializers.CharField(required=True)
+
+
+class ProfileUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = CustomUser
+        fields = ['email', 'first_name', 'last_name', 'hear_about_us', 'monthly_spend']
+        read_only_fields = (
+        'id', 'email', 'username', 'is_superuser', 'is_staff', 'password', 'email_verified', 'is_active')
