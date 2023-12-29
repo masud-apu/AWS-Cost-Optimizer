@@ -80,7 +80,7 @@ class OTPResendView(APIView):
     def send_otp_email(self, user, otp):
         context = {
             'first_name': user.first_name,
-            'otp_verification_url': f"http://127.0.0.1:8000/api/v1/verify-otp/{user.email}?token={otp}"
+            'otp_verification_url': f"https://n-ops-demo.vercel.app/verify?email={user.email}?token={otp}"
         }
         email_html_message = render_to_string('email/verification_otp.html', context)
         email_plaintext_message = render_to_string('email/verification_otp.txt', context)
