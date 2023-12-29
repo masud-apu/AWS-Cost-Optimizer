@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Email</title>
+    <link rel="stylesheet" href="verification_otp.css" />
+
+      <style>
+          * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  background: rgba(163, 162, 162, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: 110;
+}
+
+.container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  border: none;
+  border-radius: 10px;
+  z-index: 120;
+  padding: 24px;
+}
+
+.btn-container {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.btn {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  background-color: #4800ff;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: scale(0.9);
+}
+
+      </style>
+
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="container">
+        <div>
+          <h3>Hey, {{ first_name }}</h3>
+          <p>
+            Please verify your email address. Click on the "Verify your email
+            address" button bellow.
+          </p>
+        </div>
+        <div class="btn-container">
+          <a href={{ otp_verification_url }}>
+            <button class="btn">Verify your email address</button>
+          </a>
+        </div>
+        <div class="link-container">
+          <p>
+            Else, copy, and paste the
+            <a href={{ otp_verification_url }}> {{ otp_verification_url }}</a
+            >
+            in your browser to verify.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

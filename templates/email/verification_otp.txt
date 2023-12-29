@@ -1,0 +1,1 @@
+hey {{first_name}}, Please verify your email address. Click on the "Verify your email address" {{otp_verification_url}} button bellow.
